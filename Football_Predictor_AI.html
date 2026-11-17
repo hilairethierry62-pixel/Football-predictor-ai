@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ht">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>Football Predictor AI</title>
+<style>
+*{box-sizing:border-box} :root{color-scheme:dark;--bg:#0b1220;--panel:#142238;--line:#2a3c54;--text:#f4f7fb;--muted:#9aabc0;--lime:#b7f36b}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1c3651 0,transparent 38%),var(--bg);color:var(--text);font-family:Arial,system-ui,sans-serif}
+header{padding:17px 18px;border-bottom:1px solid #ffffff18;background:#0b1220;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:13px;background:var(--lime);display:grid;place-items:center;font-size:24px;color:#14210c}
+.brand b{font-size:12px;letter-spacing:.6px}.brand b span{color:var(--lime)}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.status{font-size:9px;color:var(--lime);border:1px solid #b7f36b55;padding:7px 9px;border-radius:20px}
+main{max-width:680px;margin:auto;padding:24px 16px 36px}.hero{padding:20px 4px 26px}.eyebrow,.muted{font-size:10px;letter-spacing:1.5px;color:var(--lime);font-weight:bold}
+h1{font-size:clamp(38px,9vw,56px);line-height:1.03;letter-spacing:-1.8px;margin:14px 0}h1 span{color:var(--lime)}
+.hero p{color:#b1bfd0;line-height:1.55;font-size:14px}.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.pills span,.tag{border:1px solid var(--line);border-radius:25px;padding:7px 10px;font-size:10px;color:#c4d1e1}
+.panel{background:linear-gradient(145deg,#17283e,#111c2d);border:1px solid var(--line);border-radius:18px;padding:19px;margin-bottom:15px;box-shadow:0 14px 35px #0003}
+.head{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.head h2{font-size:19px;margin:5px 0 0}.tag{color:var(--lime);border-color:#b7f36b55}
+label{display:block;font-size:11px;color:#b5c3d4;margin:13px 0 7px}
+input,select{width:100%;border:1px solid #344a64;border-radius:10px;background:#0c1727;color:white;padding:13px;font-size:14px;outline:none}
+input:focus,select:focus{border-color:var(--lime)}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{width:100%;border:0;border-radius:11px;background:var(--lime);color:#14210c;font-weight:bold;font-size:14px;padding:14px;margin-top:18px}
+.hint{font-size:10px;color:var(--muted);line-height:1.5;margin:12px 2px 0}
+.empty{text-align:center;padding:24px 10px;color:var(--muted);font-size:12px}.empty b{display:block;color:#eef4fb;font-size:14px;margin:8px}.empty p{line-height:1.5}
+.decision{border-radius:13px;padding:16px;background:#0c1727;border:1px solid #b7f36b55}.decision strong{font-size:21px;color:var(--lime);display:block;margin:8px 0}.decision p{font-size:12px;color:#b4c2d2;line-height:1.5}.warning{color:#ffce7a;font-size:10px;font-weight:bold}
+.item{border-top:1px solid var(--line);padding:12px 0;font-size:12px}.item b{display:block;margin-bottom:4px}
+.secondary{background:#263a54;color:#e5edf7;font-size:11px}
+footer{text-align:center;color:#8293a9;font-size:10px;line-height:1.7;padding:15px 10px}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">⚽</div><div><b>FOOTBALL PREDICTOR <span>AI</span></b><small>Analiz anvan ou pran desizyon</small></div></div><div class="status">● MÒD DEMO</div></header>
+<main>
+<section class="hero"><div class="eyebrow">⚡ ANALIZ FOUTBÒL</div><h1>Chwazi pi bon<br><span>opòtinite yo.</span></h1><p>Analiz tout kalite mache, ak yon desizyon klè lè done yo pa sifi.</p><div class="pills"><span>1X2</span><span>Over / Under</span><span>Double Chance</span><span>Lòt mache</span></div></section>
+<section class="panel"><div class="head"><div><div class="muted">ZÒN ANALIZ</div><h2>Analize yon match</h2></div><span class="tag">Tout mache</span></div>
+<label for="match">Non match la</label><input id="match" placeholder="Egzanp: Real Madrid vs Barcelona">
+<div class="two"><div><label for="home">Ekip lakay</label><input id="home" placeholder="Ekip lakay"></div><div><label for="away">Ekip deyò</label><input id="away" placeholder="Ekip deyò"></div></div>
+<label for="market">Mache ou vle analize</label><select id="market"><option>Tout mache (AI chwazi)</option><option>1X2</option><option>Over / Under</option><option>Double Chance</option><option>Both Teams To Score</option><option>Handicap</option><option>Autre</option></select>
+<button id="analyze">Analize match la　→</button><p class="hint">Vèsyon demonstrasyon sa a poko konekte ak done foutbòl an dirèk.</p></section>
+<section class="panel" id="result"><div class="head"><div><div class="muted">REZILTA</div><h2>Desizyon analiz la</h2></div><span class="tag">Pridan</span></div><div class="empty">📊<b>Pa gen analiz ankò</b><p>Antre yon match anlè a pou wè rezilta demonstrasyon an.</p></div></section>
+<section class="panel"><div class="head"><div><div class="muted">SWIV REZILTA</div><h2>Istwa prediksyon</h2></div><span class="tag" id="count">0 anrejistre</span></div><div id="history" class="empty">Pa gen prediksyon anrejistre.</div><button class="secondary" id="clear">Efase istwa lokal la</button></section>
+<footer>Football Predictor AI · Vèsyon demonstrasyon<br>Pa gen garanti 80% presizyon. Paryaj gen risk; pa janm chèche ratrapaj pèt.</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const getHistory=()=>{try{return JSON.parse(localStorage.getItem('fpai-history')||'[]')}catch(e){return []}};
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){let h=getHistory();$('count').textContent=h.length+' anrejistre';$('history').innerHTML=h.length?h.map(x=>`<div class="item"><b>${safe(x.match)}</b>${safe(x.market)} · ${safe(x.date)}</div>`).join(''):'Pa gen prediksyon anrejistre.'}
+$('analyze').onclick=()=>{let home=$('home').value.trim(),away=$('away').value.trim(),match=$('match').value.trim()||(home&&away?home+' vs '+away:'');if(!match){$('match').focus();return}
+$('result').innerHTML=`<div class="head"><div><div class="muted">REZILTA</div><h2>Desizyon analiz la</h2></div><span class="tag">Mòd demo</span></div><div class="decision"><div class="warning">⚠ PA PARYE — DONE PA DISPONIB</div><strong>Pa gen prediksyon verifye</strong><p>App sa a poko konekte ak yon sèvis done foutbòl an dirèk. Li pa serye pou bay yon ekip, yon mache oswa yon pousantaj konfyans san estatistik aktyèl.</p><p><b>Match:</b> ${safe(match)}<br><b>Mache:</b> ${safe($('market').value)}</p></div>`;
+let h=getHistory();h.unshift({match,market:$('market').value,date:new Date().toLocaleDateString()});try{localStorage.setItem('fpai-history',JSON.stringify(h.slice(0,30)))}catch(e){}render()};
+$('clear').onclick=()=>{localStorage.removeItem('fpai-history');render()};render();
+</script>
+</body></html>
